@@ -1,0 +1,37 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://spring-boot-mysql.cbqkwmbko8pv.ap-northeast-2.rds.amazonaws.com:3306/STUDY
+    username: dia1542
+    password: asd622539
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        format_sql: true
+---
+spring:
+  profiles: local
+
+logging:
+  level:
+    root: info
+  file:
+    name: /Users/chasungsoo/study/logs/localLog.log
+server:
+  port: 9192
+---
+spring:
+  profiles: dev
+logging:
+  level:
+    root: info
+  file:
+    name: /Users/chasungsoo/study/logs/devLog.log
+
+server:
+  port: 9191
